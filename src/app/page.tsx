@@ -21,7 +21,8 @@ export default function Home() {
       const query = encodeURIComponent(
         `${direccion}${comuna ? ', ' + comuna : ''}, Región del Biobío, Chile`
       );
-      setMapSrc(`https://www.google.com/maps/embed/v1/place?key=AIzaSyBJX7ubYXye2ryDvlZYzgwERRjxfvf8ijg&q=${query}`);
+      setMapSrc(`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${query}`);
+
     }
   }, [direccion, comuna]);
 
