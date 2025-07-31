@@ -14,15 +14,16 @@ export default function Home() {
   const [direccion, setDireccion] = useState("");
   const [region] = useState("Región del Biobío");
   const [comuna, setComuna] = useState("");
-  const [mapSrc, setMapSrc] = useState("");
+  const [mapSrc, setMapSrc] = useState(
+  `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=Concepción, Región del Biobío, Chile`
+);
 
   useEffect(() => {
     if (direccion.trim() || comuna) {
       const query = encodeURIComponent(
         `${direccion}${comuna ? ', ' + comuna : ''}, Región del Biobío, Chile`
       );
-      setMapSrc(`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${query}`);
-
+      setMapSrc(`https://www.google.com/maps/embed/v1/place?key=AIzaSyBJX7ubYXye2ryDvlZYzgwERRjxfvf8ijg&q=${query}`);
     }
   }, [direccion, comuna]);
 
