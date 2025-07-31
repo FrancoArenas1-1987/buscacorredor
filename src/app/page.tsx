@@ -23,15 +23,15 @@ export default function Home() {
       const query = encodeURIComponent(
         `${direccion}${comuna ? ', ' + comuna : ''}, Región del Biobío, Chile`
       );
-      setMapSrc(`https://www.google.com/maps/embed/v1/place?key=AIzaSyBJX7ubYXye2ryDvlZYzgwERRjxfvf8ijg&q=${query}`);
+      setMapSrc(`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}=${query}`);
     }
   }, [direccion, comuna]);
 
   return (
-    <div className="relative min-h-screen text-gray-800 scroll-smooth bg-white">
+    <div className="relative min-h-screen text-gray-800 scroll-smooth bg-white mi-div">
       <header className="py-6 px-4 shadow-sm bg-white/80 backdrop-blur sticky top-0 z-10">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">buscacorredor.cl</h1>
+          <h1 className="text-2xl font-bold text-blue-600">Buscacorredor.cl</h1>
           <nav className="hidden md:flex space-x-4 text-sm">
             <a href="#como" className="hover:underline text-blue-700">Cómo funciona</a>
             <a href="#beneficios" className="hover:underline text-blue-700">Beneficios</a>
@@ -42,12 +42,12 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 space-y-10">
+      <main className="max-w-6xl mx-auto px-4 space-y-10 ">
         {/* Hero */}
-        <section className="relative text-center pt-40 pb-4 overflow-hidden min-h-[500px] mi-div">
-          <h2 className="text-4xl font-bold text-blue-700 mb-4 pt-35 titulo-img">Encuentra al corredor perfecto para ti</h2>
-          <p className="text-lg text-gray-700 mb-6 titulo-img">Conectamos propietarios con corredores confiables en Concepción</p>
-          <a href="#contacto" className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg px-6 py-3 rounded">Comenzar ahora</a>
+        <section className="relative text-center pt-40 pb-4 overflow-hidden min-h-[500px]">
+          <h2 className="text-5xl font-bold text-blue-700 mb-4 pt-35 titulo-img">Encuentra al corredor perfecto para ti</h2>
+          <p className="text-2xl font-bold text-black-700 mb-6 titulo-img">Conectamos propietarios con corredores confiables en Concepción</p>
+          <a href="#contacto" className="font-bold inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg px-6 py-3 rounded">Cotiza de forma gratuita</a>
         </section>
 
         {/* Cómo funciona */}
@@ -171,4 +171,6 @@ export default function Home() {
       </footer>
     </div>
   );
+  
 }
+
