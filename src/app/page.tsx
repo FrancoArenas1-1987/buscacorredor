@@ -28,7 +28,7 @@ export default function Home() {
   }, [direccion, comuna]);
 
   return (
-    <div className="relative min-h-screen text-gray-800 scroll-smooth bg-white mi-div">
+    <div className="relative min-h-screen text-gray-800 scroll-smooth bg-white">
       <header className="py-6 px-4 shadow-sm bg-white/80 backdrop-blur sticky top-0 z-10">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold text-blue-600">Buscacorredor.cl</h1>
@@ -42,12 +42,12 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 space-y-10 ">
+      <main className="max-w-6xl mx-auto px-4 space-y-10">
         {/* Hero */}
-        <section className="relative text-center pt-40 pb-4 overflow-hidden min-h-[500px]">
+        <section className="relative text-center pt-40 pb-4 overflow-hidden min-h-[500px] mi-div">
           <h2 className="text-5xl font-bold text-blue-700 mb-4 pt-35 titulo-img">Encuentra al corredor perfecto para ti</h2>
-          <p className="text-2xl font-bold text-black-700 mb-6 titulo-img">Conectamos propietarios con corredores confiables en Concepción</p>
-          <a href="#contacto" className="font-bold inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg px-6 py-3 rounded">Cotiza de forma gratuita</a>
+          <p className="text-2xl font-bold text-gray-700 mb-6 titulo-img">Conectamos propietarios con corredores confiables en Concepción</p>
+          <a href="#contacto" className="font-bold inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg px-6 py-3 rounded">Comenzar ahora</a>
         </section>
 
         {/* Cómo funciona */}
